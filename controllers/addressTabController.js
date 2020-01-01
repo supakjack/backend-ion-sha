@@ -1,0 +1,39 @@
+// addressTab.js
+const sql = require('../db');
+
+exports.addAddressTab = (req, res, next) => {
+  sql.query(
+    `INSERT INTO address_tab (  adt_type_id,
+                            adt_adr_id,
+                            adt_app_id  )
+            values (?,?,?)`,
+    [req.body.adt_type_id, req.body.adt_adr_id, req.body.adt_app_id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('insert error');
+        res.json(err);
+      } else {
+        console.log('insert complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.getAllAddressTab = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM address_tab`,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select all error');
+        res.json(err);
+      } else {
+        console.log('select all complete');
+        res.json(query);
+      }
+    }
+  );
+};

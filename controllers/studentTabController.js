@@ -1,0 +1,37 @@
+// studentTabController.js
+const sql = require('../db');
+
+exports.addStudentTab = (req, res, next) => {
+  sql.query(
+    `INSERT INTO student_tab (stt_pro_id,stt_app_id)
+            values (?,?)`,
+    [req.body.stt_pro_id, req.body.stt_app_id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('insert error');
+        res.json(err);
+      } else {
+        console.log('insert complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.getAllStudentTab = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM student_tab`,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select all error');
+        res.json(err);
+      } else {
+        console.log('select all complete');
+        res.json(query);
+      }
+    }
+  );
+};
