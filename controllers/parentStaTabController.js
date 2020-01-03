@@ -49,3 +49,21 @@ exports.getAllParentStaTab = (req, res, next) => {
     }
   );
 };
+
+exports.getAtParentStaTab = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM parent_sta_tab
+            WHERE pst_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

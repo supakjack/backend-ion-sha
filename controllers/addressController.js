@@ -49,3 +49,40 @@ exports.getAllAddress = (req, res, next) => {
     }
   );
 };
+
+exports.getAddressAt = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM address
+            WHERE adr_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select at error');
+        res.json(err);
+      } else {
+        console.log('select at complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.delAddressAt = (req, res, next) => {
+  sql.query(
+    `DELETE 
+            FROM address
+            WHERE adr_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+

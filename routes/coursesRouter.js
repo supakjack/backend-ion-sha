@@ -5,6 +5,7 @@ const coursesController = require('../controllers/coursesController');
 
 /* GET Classes listing. */
 router.get('/', coursesController.getAllCourses);
+router.get('/:id', coursesController.getAtCourses);
 
 /* POST Classes listing. */
 router.post('/', coursesController.addCourses);

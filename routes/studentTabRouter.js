@@ -6,6 +6,7 @@ const studentTabController = require('../controllers/studentTabController');
 
 /* GET studentTab listing. */
 router.get('/', studentTabController.getAllStudentTab);
+router.get('/:id', studentTabController.getAtStudentTab);
 
 /* POST studentTab listing. */
 router.post('/', studentTabController.addStudentTab);

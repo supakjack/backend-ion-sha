@@ -5,6 +5,7 @@ const educationLevelsController = require('../controllers/educationLevelsControl
 
 /* GET terms listing. */
 router.get('/', educationLevelsController.getAllEducationLevels);
+router.get('/:id', educationLevelsController.getAtEducationLevels);
 
 /* POST terms listing. */
 router.post('/', educationLevelsController.addEducationLevels);

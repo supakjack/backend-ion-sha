@@ -58,3 +58,21 @@ exports.getAllRegister = (req, res, next) => {
     }
   );
 };
+
+exports.getAtRegister = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM register
+            WHERE reg_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

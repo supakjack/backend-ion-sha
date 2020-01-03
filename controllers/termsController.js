@@ -34,3 +34,21 @@ exports.getAllTerms = (req, res, next) => {
     }
   );
 };
+
+exports.getAtTerms = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM terms
+            WHERE tem_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

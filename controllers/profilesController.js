@@ -59,3 +59,21 @@ exports.getAllProfiles = (req, res, next) => {
     }
   );
 };
+
+exports.getAtProfiles = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM profiles
+            WHERE pro_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

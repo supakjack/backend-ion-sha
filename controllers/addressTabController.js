@@ -37,3 +37,39 @@ exports.getAllAddressTab = (req, res, next) => {
     }
   );
 };
+
+exports.getAddressTabAt = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM address_tab
+            WHERE adt_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select at error');
+        res.json(err);
+      } else {
+        console.log('select at complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.delAddressTabAt = (req, res, next) => {
+  sql.query(
+    `DELETE 
+            FROM address_tab
+            WHERE adt_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

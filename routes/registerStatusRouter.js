@@ -5,6 +5,7 @@ const registerStatusController = require('../controllers/registerStatusControlle
 
 /* GET register_status listing. */
 router.get('/', registerStatusController.getAllRegisterStatus);
+router.get('/:id', registerStatusController.getAtRegisterStatus);
 
 /* POST register_status listing. */
 router.post('/', registerStatusController.addRegisterStatus);

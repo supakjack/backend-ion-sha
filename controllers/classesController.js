@@ -34,3 +34,21 @@ exports.getAllClasses = (req, res, next) => {
     }
   );
 };
+
+exports.getAtClasses = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM classes
+            WHERE cls_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select at error');
+        res.json(err);
+      } else {
+        console.log('select at complete');
+        res.json(query);
+      }
+    }
+  );
+};

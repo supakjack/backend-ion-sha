@@ -34,3 +34,21 @@ exports.getAllUser = (req, res, next) => {
     }
   );
 };
+
+exports.getAtUser = (req, res, next) => {
+  sql.query(
+    `SELECT *
+      FROM users
+      WHERE usr_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

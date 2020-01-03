@@ -34,3 +34,21 @@ exports.getAllCourses = (req, res, next) => {
     }
   );
 };
+
+exports.getAtCourses = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM courses
+            WHERE crs_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

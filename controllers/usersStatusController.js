@@ -34,3 +34,21 @@ exports.getAllStatus = (req, res, next) => {
     }
   );
 };
+
+exports.getAtStatus = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM users_status
+            WHERE uss_id =?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

@@ -6,6 +6,10 @@ const addressTypeController = require('../controllers/addressTypeController');
 
 /* GET addressType listing. */
 router.get('/', addressTypeController.getAllAddressType);
+router.get('/:id', addressTypeController.getATAddressType);
+
+/* DELETE addressType listing. */
+router.delete('/', addressTypeController.delAddressType);
 
 /* POST addressType listing. */
 router.post('/', addressTypeController.addAddressType);

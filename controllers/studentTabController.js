@@ -35,3 +35,22 @@ exports.getAllStudentTab = (req, res, next) => {
     }
   );
 };
+
+
+exports.getAtStudentTab = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+            FROM student_tab
+            WHERE stt_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select At error');
+        res.json(err);
+      } else {
+        console.log('select At complete');
+        res.json(query);
+      }
+    }
+  );
+};

@@ -1,0 +1,1760 @@
+{
+	"info": {
+		"_postman_id": "7adbbcff-7620-421c-a2fd-97c52c533716",
+		"name": "ion_sha",
+		"description": "ionic test backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "select all users_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/uss/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"uss",
+						""
+					]
+				},
+				"description": "http://localhost:3000/uss/"
+			},
+			"response": []
+		},
+		{
+			"name": "add status users_status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "uss_name",
+							"value": "เจ้าหน้าที่ดูแลระดับอนุบาล",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/uss/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"uss",
+						""
+					]
+				},
+				"description": "http://localhost:3000/uss/"
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/usr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usr"
+					]
+				},
+				"description": "http://localhost:3000/usr"
+			},
+			"response": []
+		},
+		{
+			"name": "add user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "usr_name",
+							"value": "60160025",
+							"type": "text"
+						},
+						{
+							"key": "usr_pass",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "usr_sta_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/usr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all years",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/yrs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"yrs"
+					]
+				},
+				"description": "get all years"
+			},
+			"response": []
+		},
+		{
+			"name": "add years",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "yrs_name",
+							"value": "2560",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/yrs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"yrs"
+					]
+				},
+				"description": "http://localhost:3000/yrs"
+			},
+			"response": []
+		},
+		{
+			"name": "get all terms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tem"
+					]
+				},
+				"description": "http://localhost:3000/tem"
+			},
+			"response": []
+		},
+		{
+			"name": "add terms",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tem_name",
+							"value": "กลางภาคเรียน",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/tem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tem"
+					]
+				},
+				"description": "http://localhost:3000/tem"
+			},
+			"response": []
+		},
+		{
+			"name": "get all education_levels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/edl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"edl"
+					]
+				},
+				"description": "http://localhost:3000/edl"
+			},
+			"response": []
+		},
+		{
+			"name": "add education_levels",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "edl_name",
+							"value": "ประถมศึกษา",
+							"type": "text"
+						},
+						{
+							"key": "edl_sub_name",
+							"value": "ป.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/edl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"edl"
+					]
+				},
+				"description": "http://localhost:3000/edl"
+			},
+			"response": []
+		},
+		{
+			"name": "get all cls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cls"
+					]
+				},
+				"description": "http://localhost:3000/cls"
+			},
+			"response": []
+		},
+		{
+			"name": "add cls",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cls_title",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "cls_sub",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/cls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cls"
+					]
+				},
+				"description": "http://localhost:3000/cls"
+			},
+			"response": []
+		},
+		{
+			"name": "get all courses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "crs_th_name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "crs_en_name\t",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "crs_ment",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/crs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crs"
+					]
+				},
+				"description": "http://localhost:3000/crs"
+			},
+			"response": []
+		},
+		{
+			"name": "add course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "crs_th_name",
+							"value": "ภาษาอังกฤษพิเศษ",
+							"type": "text"
+						},
+						{
+							"key": "crs_en_name",
+							"value": "english special",
+							"type": "text"
+						},
+						{
+							"key": "crs_ment",
+							"value": "หลักสูตรภาษาอังกฤษพิเศษ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/crs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crs"
+					]
+				},
+				"description": "http://localhost:3000/crs"
+			},
+			"response": []
+		},
+		{
+			"name": "get all register status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rgs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rgs"
+					]
+				},
+				"description": "http://localhost:3000/rgs"
+			},
+			"response": []
+		},
+		{
+			"name": "add register status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "rgs_name",
+							"value": "กำลังทำ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/rgs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rgs"
+					]
+				},
+				"description": "http://localhost:3000/rgs"
+			},
+			"response": []
+		},
+		{
+			"name": "get all register",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reg"
+					]
+				},
+				"description": "http://localhost:3000/reg"
+			},
+			"response": []
+		},
+		{
+			"name": "add register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reg_code",
+							"value": "0101001",
+							"type": "text"
+						},
+						{
+							"key": "reg_end",
+							"value": "2020-02-01",
+							"type": "text"
+						},
+						{
+							"key": "reg_round",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_max",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "reg_now",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "reg_sta_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_yrs_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_tem_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_cls_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_crs_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_edl_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reg_start",
+							"value": "2020-01-01",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/reg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reg"
+					]
+				},
+				"description": "http://localhost:3000/reg"
+			},
+			"response": []
+		},
+		{
+			"name": "get all applicationsStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/aps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"aps"
+					]
+				},
+				"description": "http://localhost:3000/aps"
+			},
+			"response": []
+		},
+		{
+			"name": "add applications status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "aps_name",
+							"value": "กำลังทำ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/aps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"aps"
+					],
+					"query": [
+						{
+							"key": "aps_name",
+							"value": "กำลังทำ",
+							"disabled": true
+						}
+					]
+				},
+				"description": "http://localhost:3000/aps"
+			},
+			"response": []
+		},
+		{
+			"name": "get all parent_sta_type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ptt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ptt"
+					]
+				},
+				"description": "http://localhost:3000/ptt"
+			},
+			"response": []
+		},
+		{
+			"name": "add addParentStaType",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "ptt_name",
+							"value": "อยู่ด้วยกัน",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/ptt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ptt"
+					],
+					"query": [
+						{
+							"key": "ptt_name",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "http://localhost:3000/ptt"
+			},
+			"response": []
+		},
+		{
+			"name": "get all parentStaTab",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pst"
+					]
+				},
+				"description": "http://localhost:3000/pst"
+			},
+			"response": []
+		},
+		{
+			"name": "add pareant status tab",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pst_salary",
+							"value": "125000",
+							"type": "text"
+						},
+						{
+							"key": "pst_name",
+							"value": "สมชาย จงจอหอ",
+							"type": "text"
+						},
+						{
+							"key": "pst_phone",
+							"value": "0223640611",
+							"type": "text"
+						},
+						{
+							"key": "pst_rela",
+							"value": "พ่อ",
+							"type": "text"
+						},
+						{
+							"key": "pst_pf_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pst_type_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pst_app_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/pst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pst"
+					]
+				},
+				"description": "http://localhost:3000/pst"
+			},
+			"response": []
+		},
+		{
+			"name": "get all applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/app",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"app"
+					]
+				},
+				"description": "http://localhost:3000/app"
+			},
+			"response": []
+		},
+		{
+			"name": "add applications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "app_code",
+							"value": "กกกก001",
+							"type": "text"
+						},
+						{
+							"key": "app_update_date",
+							"value": "2020-12-31",
+							"type": "text"
+						},
+						{
+							"key": "app_sta_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "app_usr_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "app_pro_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "app_reg_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/app",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"app"
+					]
+				},
+				"description": "http://localhost:3000/app"
+			},
+			"response": []
+		},
+		{
+			"name": "get all profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pro"
+					]
+				},
+				"description": "http://localhost:3000/pro"
+			},
+			"response": []
+		},
+		{
+			"name": "add profiles",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pro_first_th_name",
+							"value": "มานี",
+							"type": "text"
+						},
+						{
+							"key": "pro_last_th_name",
+							"value": "รักษ์ดี",
+							"type": "text"
+						},
+						{
+							"key": "pro_first_en_name",
+							"value": "manee",
+							"type": "text"
+						},
+						{
+							"key": "pro_last_en_name",
+							"value": "lukdee",
+							"type": "text"
+						},
+						{
+							"key": "pro_id_card",
+							"value": "1024403164236",
+							"type": "text"
+						},
+						{
+							"key": "pro_race",
+							"value": "ไทย-ลาว",
+							"type": "text"
+						},
+						{
+							"key": "pro_bod",
+							"value": "2020-12-10",
+							"type": "text"
+						},
+						{
+							"key": "pro_nation_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pro_blood_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pro_prefix_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pro_province_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pro_religion_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/pro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pro"
+					]
+				},
+				"description": "http://localhost:3000/pro"
+			},
+			"response": []
+		},
+		{
+			"name": "get all student tab",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/stt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stt"
+					]
+				},
+				"description": "http://localhost:3000/stt"
+			},
+			"response": []
+		},
+		{
+			"name": "add student tab",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "stt_pro_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "stt_app_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/stt?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stt"
+					],
+					"query": [
+						{
+							"key": "stt_pro_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "stt_app_id",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				},
+				"description": "http://localhost:3000/stt"
+			},
+			"response": []
+		},
+		{
+			"name": "get all parent type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/prt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"prt"
+					]
+				},
+				"description": "http://localhost:3000/prt"
+			},
+			"response": []
+		},
+		{
+			"name": "add parent type",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "prt_name",
+							"value": "บิดา",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/prt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"prt"
+					]
+				},
+				"description": "http://localhost:3000/prt"
+			},
+			"response": []
+		},
+		{
+			"name": "get all address type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/art",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"art"
+					]
+				},
+				"description": "http://localhost:3000/art"
+			},
+			"response": []
+		},
+		{
+			"name": "add address type",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "art_name",
+							"value": "ที่อยู่ปัจจุบัน",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/art",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"art"
+					]
+				},
+				"description": "http://localhost:3000/art"
+			},
+			"response": []
+		},
+		{
+			"name": "get all address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adr"
+					]
+				},
+				"description": "http://localhost:3000/adr"
+			},
+			"response": []
+		},
+		{
+			"name": "add address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "adr_home_number",
+							"value": "0336420344",
+							"type": "text"
+						},
+						{
+							"key": "adr_hmo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "adr_road",
+							"value": "เพชรเกษม",
+							"type": "text"
+						},
+						{
+							"key": "adr_tum_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "adr_aum_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "adr_pro_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "adr_pri_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/adr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adr"
+					],
+					"query": [
+						{
+							"key": "adr_home_number",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "adr_hmo",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "adr_road",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "adr_tum_id",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "adr_aum_id",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "adr_pro_id",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "adr_pri_id",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "http://localhost:3000/adr"
+			},
+			"response": []
+		},
+		{
+			"name": "get all address_tab",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adt"
+					]
+				},
+				"description": "http://localhost:3000/adt"
+			},
+			"response": []
+		},
+		{
+			"name": "add address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "adt_type_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "adt_adr_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "adt_app_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/adt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adt"
+					]
+				},
+				"description": "http://localhost:3000/adt"
+			},
+			"response": []
+		},
+		{
+			"name": "get all parent tab",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pat"
+					]
+				},
+				"description": "http://localhost:3000/pat"
+			},
+			"response": []
+		},
+		{
+			"name": "add parent tab",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pat_job",
+							"value": "ขายตรง",
+							"type": "text"
+						},
+						{
+							"key": "pat_phone",
+							"value": "0551260788",
+							"type": "text"
+						},
+						{
+							"key": "pat_salary",
+							"value": "125325",
+							"type": "text"
+						},
+						{
+							"key": "pat_type_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pat_app_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "pat_pro_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/pat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pat"
+					]
+				},
+				"description": "http://localhost:3000/pat"
+			},
+			"response": []
+		},
+		{
+			"name": "get address at",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adr/?id=1&=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adr",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "",
+							"value": "1"
+						}
+					]
+				},
+				"description": "http://localhost:3000/adr/:id"
+			},
+			"response": []
+		},
+		{
+			"name": "get addr tab at",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adt/2?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adt",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				},
+				"description": "http://localhost:3000/adt/2"
+			},
+			"response": []
+		},
+		{
+			"name": "get art at ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adt/3?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adt",
+						"3"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "http://localhost:3000/adt/"
+			},
+			"response": []
+		},
+		{
+			"name": "get app at ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/app/3?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"app",
+						"3"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				},
+				"description": "http://localhost:3000/app"
+			},
+			"response": []
+		},
+		{
+			"name": "get at aps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/aps/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"aps",
+						"1"
+					]
+				},
+				"description": "get at aps"
+			},
+			"response": []
+		},
+		{
+			"name": "get cls at",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cls/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cls",
+						"1"
+					]
+				},
+				"description": "http://localhost:3000/cls/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get crs at",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get at edl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/edl/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"edl",
+						"1"
+					]
+				},
+				"description": "http://localhost:3000/edl/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get at pst",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pst/3?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pst",
+						"3"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				},
+				"description": "http://localhost:3000/pst/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get at ptt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ptt/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ptt",
+						"1"
+					]
+				},
+				"description": "http://localhost:3000/ptt/3"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

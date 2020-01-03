@@ -5,6 +5,7 @@ const applicationsStatusController = require('../controllers/applicationsStatusC
 
 /* GET users listing. */
 router.get('/', applicationsStatusController.getAllApplicationsStatus);
+router.get('/:id', applicationsStatusController.getAtApplicationsStatus);
 
 /* POST users listing. */
 router.post('/', applicationsStatusController.addApplicationsStatus);
