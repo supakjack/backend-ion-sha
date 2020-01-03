@@ -77,3 +77,21 @@ exports.getAtProfiles = (req, res, next) => {
     }
   );
 };
+
+exports.delAtProfiles = (req, res, next) => {
+  sql.query(
+    `DELETE 
+            FROM profiles
+            WHERE pro_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

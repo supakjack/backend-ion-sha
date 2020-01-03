@@ -52,3 +52,21 @@ exports.getAtClasses = (req, res, next) => {
     }
   );
 };
+
+exports.delAtClasses = (req, res, next) => {
+  sql.query(
+    `DELETE 
+            FROM classes
+            WHERE cls_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

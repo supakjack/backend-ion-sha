@@ -7,6 +7,9 @@ const yearsController = require('../controllers/yearsController');
 router.get('/', yearsController.getAllYears);
 router.get('/:id', yearsController.getAtYears);
 
+/* DELETE years listing. */
+router.delete('/:id', yearsController.delAtYears);
+
 /* POST years listing. */
 router.post('/', yearsController.addYears);
 

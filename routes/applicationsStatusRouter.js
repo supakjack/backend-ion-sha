@@ -7,6 +7,9 @@ const applicationsStatusController = require('../controllers/applicationsStatusC
 router.get('/', applicationsStatusController.getAllApplicationsStatus);
 router.get('/:id', applicationsStatusController.getAtApplicationsStatus);
 
+/* delete users listing. */
+router.delete('/:id', applicationsStatusController.delAtApplicationsStatus);
+
 /* POST users listing. */
 router.post('/', applicationsStatusController.addApplicationsStatus);
 

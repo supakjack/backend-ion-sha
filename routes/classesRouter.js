@@ -7,6 +7,9 @@ const classesController = require('../controllers/classesController');
 router.get('/', classesController.getAllClasses);
 router.get('/:id', classesController.getAtClasses);
 
+/* DELETE Classes listing. */
+router.delete('/:id', classesController.delAtClasses);
+
 /* POST Classes listing. */
 router.post('/', classesController.addClasses);
 

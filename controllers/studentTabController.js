@@ -54,3 +54,21 @@ exports.getAtStudentTab = (req, res, next) => {
     }
   );
 };
+
+exports.delAtStudentTab = (req, res, next) => {
+  sql.query(
+    `DELETE
+            FROM student_tab
+            WHERE stt_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

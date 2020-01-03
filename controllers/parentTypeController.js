@@ -53,3 +53,21 @@ exports.getAtParentType = (req, res, next) => {
     }
   );
 };
+
+exports.delAtParentType = (req, res, next) => {
+  sql.query(
+    `DELETE
+            FROM parent_type
+            WHERE prt_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

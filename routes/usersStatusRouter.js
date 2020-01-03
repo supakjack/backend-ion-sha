@@ -7,6 +7,9 @@ const usersStatusController = require('../controllers/usersStatusController');
 router.get('/', usersStatusController.getAllStatus);
 router.get('/:id', usersStatusController.getAtStatus);
 
+/* DELETE users listing. */
+router.delete('/:id', usersStatusController.delAtStatus);
+
 /* POST users listing. */
 router.post('/', usersStatusController.addStatus);
 

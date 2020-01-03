@@ -52,3 +52,21 @@ exports.getAtYears = (req, res, next) => {
     }
   );
 };
+
+exports.delAtYears = (req, res, next) => {
+  sql.query(
+    `DELETE
+            FROM years
+            WHERE yrs_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

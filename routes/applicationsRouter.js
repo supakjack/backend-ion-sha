@@ -7,6 +7,9 @@ const applicationsController = require('../controllers/applicationsController');
 router.get('/', applicationsController.getAllApplications);
 router.get('/:id', applicationsController.getAtApplications);
 
+/* delete Classes listing. */
+router.delete('/:id', applicationsController.delAtApplications);
+
 /* POST Classes listing. */
 router.post('/', applicationsController.addApplications);
 

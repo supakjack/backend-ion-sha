@@ -76,3 +76,21 @@ exports.getAtRegister = (req, res, next) => {
     }
   );
 };
+
+exports.delAtRegister = (req, res, next) => {
+  sql.query(
+    `DELETE
+            FROM register
+            WHERE reg_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

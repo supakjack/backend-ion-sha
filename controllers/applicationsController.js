@@ -65,3 +65,21 @@ exports.getAtApplications = (req, res, next) => {
     }
   );
 };
+
+exports.delAtApplications = (req, res, next) => {
+  sql.query(
+    `DELETE
+            FROM applications
+            WHERE app_id = ?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};

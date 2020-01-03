@@ -7,6 +7,9 @@ const profilesController = require('../controllers/profilesController');
 router.get('/', profilesController.getAllProfiles);
 router.get('/:id', profilesController.getAtProfiles);
 
+/* DELETE profiles listing. */
+router.delete('/:id', profilesController.delAtProfiles);
+
 /* POST profiles listing. */
 router.post('/', profilesController.addProfiles);
 

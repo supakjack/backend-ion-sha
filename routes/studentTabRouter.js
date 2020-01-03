@@ -8,6 +8,9 @@ const studentTabController = require('../controllers/studentTabController');
 router.get('/', studentTabController.getAllStudentTab);
 router.get('/:id', studentTabController.getAtStudentTab);
 
+/* DELETE studentTab listing. */
+router.delete('/:id', studentTabController.delAtStudentTab);
+
 /* POST studentTab listing. */
 router.post('/', studentTabController.addStudentTab);
 

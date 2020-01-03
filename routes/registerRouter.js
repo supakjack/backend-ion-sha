@@ -7,6 +7,9 @@ const registerController = require('../controllers/registerController');
 router.get('/', registerController.getAllRegister);
 router.get('/:id', registerController.getAtRegister);
 
+/* DELETE register listing. */
+router.delete('/:id', registerController.delAtRegister);
+
 /* POST register listing. */
 router.post('/', registerController.addRegister);
 

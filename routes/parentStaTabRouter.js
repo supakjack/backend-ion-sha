@@ -7,6 +7,9 @@ const parentStaTabController = require('../controllers/parentStaTabController');
 router.get('/', parentStaTabController.getAllParentStaTab);
 router.get('/:id', parentStaTabController.getAtParentStaTab);
 
+/* DELETE parentStaTab listing. */
+router.delete('/:id', parentStaTabController.delAtParentStaTab);
+
 /* POST parentStaTab listing. */
 router.post('/', parentStaTabController.addParentStaTab);
 

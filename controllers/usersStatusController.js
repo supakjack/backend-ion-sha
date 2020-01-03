@@ -52,3 +52,21 @@ exports.getAtStatus = (req, res, next) => {
     }
   );
 };
+
+exports.delAtStatus = (req, res, next) => {
+  sql.query(
+    `DELETE
+            FROM users_status
+            WHERE uss_id =?`,req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select del error');
+        res.json(err);
+      } else {
+        console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
