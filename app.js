@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/usersRouter');
@@ -25,8 +26,12 @@ const addressTypeRouter = require('./routes/addressTypeRouter');
 const addressRouter = require('./routes/addressRouter');
 const addressTabRouter = require('./routes/addressTabRouter');
 const parentTabRouter = require('./routes/parentTabRouter');
+const sessionRouter = require('./routes/sessionRouter');
 
 var app = express();
+
+// register the session with it's secret ID
+app.use(session({ secret: 'uitisawesome' }));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -62,5 +67,6 @@ app.use('/art', addressTypeRouter);
 app.use('/adr', addressRouter);
 app.use('/adt', addressTabRouter);
 app.use('/pat', parentTabRouter);
+app.use('/ses', sessionRouter);
 
 module.exports = app;
