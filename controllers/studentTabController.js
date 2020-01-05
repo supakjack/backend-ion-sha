@@ -72,3 +72,23 @@ exports.delAtStudentTab = (req, res, next) => {
     }
   );
 };
+
+exports.updateStudentTab = (req, res, next) => {
+  sql.query(
+    `UPDATE student_tab 
+      SET stt_pro_id,
+          stt_app_id
+      WHERE stt_id = ?`,
+    [req.body.stt_pro_id, req.body.stt_app_id,req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
+        res.json(query);
+      }
+    }
+  );
+};

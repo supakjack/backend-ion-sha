@@ -52,7 +52,8 @@ exports.getAtApplications = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM applications
-            WHERE app_id = ?`,req.params.id,
+            WHERE app_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -70,7 +71,8 @@ exports.delAtApplications = (req, res, next) => {
   sql.query(
     `DELETE
             FROM applications
-            WHERE app_id = ?`,req.params.id,
+            WHERE app_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -78,6 +80,38 @@ exports.delAtApplications = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateApplications = (req, res, next) => {
+  sql.query(
+    `UPDATE applications 
+      SET   app_code = ? ,
+            app_update_date = ? ,
+            app_sta_id = ? ,
+            app_usr_id = ? ,
+            app_pro_id = ? ,
+            app_reg_id = ?  
+      WHERE app_id = ?`,
+    [
+      req.body.app_code,
+      req.body.app_update_date,
+      req.body.app_sta_id,
+      req.body.app_usr_id,
+      req.body.app_pro_id,
+      req.body.app_reg_id,
+      req.params.id
+    ],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

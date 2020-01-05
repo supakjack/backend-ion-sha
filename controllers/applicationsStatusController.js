@@ -72,3 +72,23 @@ exports.delAtApplicationsStatus = (req, res, next) => {
     }
   );
 };
+
+exports.updateApplicationsStatus = (req, res, next) => {
+  sql.query(
+    `UPDATE applications_status 
+      SET aps_name = ?,
+      SET aps_use = ?
+      WHERE aps_id = ?`,
+    [req.body.aps_name,req.body.aps_use,req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
+        res.json(query);
+      }
+    }
+  );
+};

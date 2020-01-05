@@ -10,6 +10,9 @@ router.get('/:id', termsController.getAtTerms);
 /* DELETE terms listing. */
 router.delete('/:id', termsController.delAtTerms);
 
+/* put terms listing. */
+router.put('/:id', termsController.updateTerms);
+
 /* POST terms listing. */
 router.post('/', termsController.addTerms);
 

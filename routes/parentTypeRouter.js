@@ -11,6 +11,9 @@ router.get('/:id', parentTypeController.getAtParentType);
 /* DELETE parentType listing. */
 router.delete('/:id', parentTypeController.delAtParentType);
 
+/* put parentType listing. */
+router.put('/:id', parentTypeController.updateParentType);
+
 /* POST parentType listing. */
 router.post('/', parentTypeController.addParentType);
 

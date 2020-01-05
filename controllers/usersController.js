@@ -39,7 +39,8 @@ exports.getAtUser = (req, res, next) => {
   sql.query(
     `SELECT *
       FROM users
-      WHERE usr_id = ?`,req.params.id,
+      WHERE usr_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -57,7 +58,8 @@ exports.delAtUser = (req, res, next) => {
   sql.query(
     `DELETE
       FROM users
-      WHERE usr_id = ?`,req.params.id,
+      WHERE usr_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -65,6 +67,32 @@ exports.delAtUser = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateUser = (req, res, next) => {
+  sql.query(
+    `UPDATE users 
+      SET usr_name =? ,
+          usr_pass =? ,
+          usr_sta_id = ?
+      WHERE usr_id = ?`,
+    [
+      req.body.usr_name,
+      req.body.usr_pass,
+      req.params.usr_sta_id,
+      req.params.id
+    ],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

@@ -11,6 +11,9 @@ router.get('/:id', addressTabController.getAddressTabAt);
 /* DELETE addressTab listing. */
 router.delete('/:id', addressTabController.delAddressTabAt);
 
+/* PUT addressTab listing. */
+router.put('/:id', addressTabController.updateAddressTab);
+
 /* POST addressTab listing. */
 router.post('/', addressTabController.addAddressTab);
 

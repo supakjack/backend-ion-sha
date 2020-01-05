@@ -64,7 +64,8 @@ exports.getAtProfiles = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM profiles
-            WHERE pro_id = ?`,req.params.id,
+            WHERE pro_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -82,7 +83,8 @@ exports.delAtProfiles = (req, res, next) => {
   sql.query(
     `DELETE 
             FROM profiles
-            WHERE pro_id = ?`,req.params.id,
+            WHERE pro_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -90,6 +92,50 @@ exports.delAtProfiles = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateProfiles = (req, res, next) => {
+  sql.query(
+    `UPDATE profiles 
+      SET pro_first_th_name =?,
+          pro_last_th_name = ?,
+          pro_first_en_name = ?,
+          pro_last_en_name = ?,
+          pro_id_card = ?,
+          pro_race = ?,
+          pro_bod = ?,
+          pro_nation_id = ?,
+          pro_blood_id = ?,
+          pro_prefix_id = ?,
+          pro_province_id = ?,
+          pro_religion_id = ?  
+      WHERE pro_id = ?`,
+    [
+      req.body.pro_first_th_name,
+      req.body.pro_last_th_name,
+      req.body.pro_first_en_name,
+      req.body.pro_last_en_name,
+      req.body.pro_id_card,
+      req.body.pro_race,
+      req.body.pro_bod,
+      req.body.pro_nation_id,
+      req.body.pro_blood_id,
+      req.body.pro_prefix_id,
+      req.body.pro_province_id,
+      req.body.pro_religion_id,
+      req.params.id
+    ],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

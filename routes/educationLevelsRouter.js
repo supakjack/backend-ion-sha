@@ -10,6 +10,9 @@ router.get('/:id', educationLevelsController.getAtEducationLevels);
 /* DELETE terms listing. */
 router.delete('/:id', educationLevelsController.delAtEducationLevels);
 
+/* put terms listing. */
+router.put('/:id', educationLevelsController.updateEducationLevels);
+
 /* POST terms listing. */
 router.post('/', educationLevelsController.addEducationLevels);
 

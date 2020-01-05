@@ -70,3 +70,23 @@ exports.delAtYears = (req, res, next) => {
     }
   );
 };
+
+exports.updateYears = (req, res, next) => {
+  sql.query(
+    `UPDATE years 
+      SET yrs_name = ?,
+          yrs_use = ?
+      WHERE yrs_id = ?`,
+    [req.body.yrs_name,req.body.yrs_use,req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
+        res.json(query);
+      }
+    }
+  );
+};

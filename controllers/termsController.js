@@ -39,7 +39,8 @@ exports.getAtTerms = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM terms
-            WHERE tem_id = ?`,req.params.id,
+            WHERE tem_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -57,7 +58,8 @@ exports.delAtTerms = (req, res, next) => {
   sql.query(
     `DELETE
             FROM terms
-            WHERE tem_id = ?`,req.params.id,
+            WHERE tem_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -65,6 +67,26 @@ exports.delAtTerms = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateTerms = (req, res, next) => {
+  sql.query(
+    `UPDATE terms 
+      SET tem_name = ?,
+          tem_use = ?
+      WHERE tem_id = ?`,
+    [req.body.tem_name, req.body.tem_use, req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('insert error');
+        res.json(err);
+      } else {
+        console.log('insert complete');
         res.json(query);
       }
     }

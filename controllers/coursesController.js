@@ -39,7 +39,8 @@ exports.getAtCourses = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM courses
-            WHERE crs_id = ?`,req.params.id,
+            WHERE crs_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -53,12 +54,12 @@ exports.getAtCourses = (req, res, next) => {
   );
 };
 
-
 exports.delAtCourses = (req, res, next) => {
   sql.query(
     `DELETE 
             FROM courses
-            WHERE crs_id = ?`,req.params.id,
+            WHERE crs_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -66,6 +67,28 @@ exports.delAtCourses = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateCourses = (req, res, next) => {
+  sql.query(
+    `UPDATE courses 
+      SET crs_th_name = ?,
+          crs_en_name = ?,
+          crs_ment = ?,
+          crs_use = ?
+      WHERE crs_id = ?`,
+    [req.body.crs_th_name, req.body.crs_en_name, req.body.crs_ment, req.body.crs_use , req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

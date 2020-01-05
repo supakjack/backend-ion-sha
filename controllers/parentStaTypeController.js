@@ -40,7 +40,8 @@ exports.getAtParentStaType = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM parent_sta_type
-            WHERE ptt_id = ?`,req.params.id,
+            WHERE ptt_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -58,7 +59,8 @@ exports.delAtParentStaType = (req, res, next) => {
   sql.query(
     `DELETE
             FROM parent_sta_type
-            WHERE ptt_id = ?`,req.params.id,
+            WHERE ptt_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -66,6 +68,26 @@ exports.delAtParentStaType = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateParentStaType = (req, res, next) => {
+  sql.query(
+    `UPDATE parent_sta_type 
+      SET ptt_name=?,
+          ptt_use=?
+      WHERE ptt_id =?`,
+    [req.body.ptt_name, req.body.ptt_use, req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

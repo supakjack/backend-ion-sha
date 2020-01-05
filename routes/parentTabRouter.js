@@ -10,6 +10,9 @@ router.get('/:id', parentTabController.getAtParentTab);
 /* DELETE parentTab listing. */
 router.delete('/:id', parentTabController.delAtParentTab);
 
+/* put parentTab listing. */
+router.put('/:id', parentTabController.updateParentTab);
+
 /* POST parentTab listing. */
 router.post('/', parentTabController.addParentTab);
 

@@ -11,6 +11,9 @@ router.get('/:id', coursesController.getAtCourses);
 /* DELETE Classes listing. */
 router.delete('/:id', coursesController.delAtCourses);
 
+/* put Classes listing. */
+router.put('/:id', coursesController.updateCourses);
+
 /* POST Classes listing. */
 router.post('/', coursesController.addCourses);
 

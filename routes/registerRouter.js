@@ -10,6 +10,9 @@ router.get('/:id', registerController.getAtRegister);
 /* DELETE register listing. */
 router.delete('/:id', registerController.delAtRegister);
 
+/* put register listing. */
+router.put('/:id', registerController.updateRegister);
+
 /* POST register listing. */
 router.post('/', registerController.addRegister);
 

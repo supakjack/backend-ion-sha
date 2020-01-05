@@ -10,6 +10,9 @@ router.get('/:id', usersStatusController.getAtStatus);
 /* DELETE users listing. */
 router.delete('/:id', usersStatusController.delAtStatus);
 
+/* put users listing. */
+router.put('/:id', usersStatusController.updateStatus);
+
 /* POST users listing. */
 router.post('/', usersStatusController.addStatus);
 

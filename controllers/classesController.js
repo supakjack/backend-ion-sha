@@ -70,3 +70,24 @@ exports.delAtClasses = (req, res, next) => {
     }
   );
 };
+
+exports.updateClasses = (req, res, next) => {
+  sql.query(
+    `UPDATE classes 
+      SET cls_title = ?,
+          cls_sub = ?,
+          cls_use = ?
+      WHERE cls_id = ?`,
+    [req.body.cls_title,req.body.cls_sub,req.body.cls_use,req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
+        res.json(query);
+      }
+    }
+  );
+};

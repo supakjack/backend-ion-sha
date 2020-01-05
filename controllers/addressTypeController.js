@@ -40,7 +40,8 @@ exports.getATAddressType = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM address_type
-            WHERE art_id = ?`,req.params.id,
+            WHERE art_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -58,7 +59,8 @@ exports.delAddressType = (req, res, next) => {
   sql.query(
     `DELETE 
             FROM address_type
-            WHERE art_id = ?`,req.params.id,
+            WHERE art_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -66,6 +68,26 @@ exports.delAddressType = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateAddressType = (req, res, next) => {
+  sql.query(
+    `UPDATE address_type 
+        SET art_name = ?,
+            art_use = ?
+        WHERE art_id = ?`,
+    [req.body.art_name, req.body.art_use, req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

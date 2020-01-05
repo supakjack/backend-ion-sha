@@ -11,6 +11,9 @@ router.get('/:id', addressTypeController.getATAddressType);
 /* DELETE addressType listing. */
 router.delete('/:id', addressTypeController.delAddressType);
 
+/* PUT addressType listing. */
+router.put('/:id', addressTypeController.updateAddressType);
+
 /* POST addressType listing. */
 router.post('/', addressTypeController.addAddressType);
 

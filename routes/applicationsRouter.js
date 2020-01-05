@@ -10,6 +10,9 @@ router.get('/:id', applicationsController.getAtApplications);
 /* delete Classes listing. */
 router.delete('/:id', applicationsController.delAtApplications);
 
+/* put Classes listing. */
+router.put('/:id', applicationsController.updateApplications);
+
 /* POST Classes listing. */
 router.post('/', applicationsController.addApplications);
 

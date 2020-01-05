@@ -11,6 +11,9 @@ router.get('/:id', addressController.getAddressAt);
 /* DELETE address listing. */
 router.delete('/:id', addressController.delAddressAt);
 
+/* put address listing. */
+router.put('/:id', addressController.updateAddress);
+
 /* POST address listing. */
 router.post('/', addressController.addAddress);
 

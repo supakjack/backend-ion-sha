@@ -54,7 +54,8 @@ exports.getAddressAt = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM address
-            WHERE adr_id = ?`,req.params.id,
+            WHERE adr_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -72,7 +73,8 @@ exports.delAddressAt = (req, res, next) => {
   sql.query(
     `DELETE 
             FROM address
-            WHERE adr_id = ?`,req.params.id,
+            WHERE adr_id = ?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -86,3 +88,37 @@ exports.delAddressAt = (req, res, next) => {
   );
 };
 
+exports.updateAddress = (req, res, next) => {
+  sql.query(
+    `UPDATE address 
+      SET  
+        adr_home_number = ?,
+        adr_hmo = ?,
+        adr_road = ?,
+        adr_tum_id = ?,
+        adr_aum_id = ?,
+        adr_pro_id = ?,
+        adr_pri_id = ? 
+      WHERE adr_id = ?`,
+    [
+      req.body.adr_home_number,
+      req.body.adr_hmo,
+      req.body.adr_road,
+      req.body.adr_tum_id,
+      req.body.adr_aum_id,
+      req.body.adr_pro_id,
+      req.body.adr_pri_id,
+      req.params.id
+    ],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
+        res.json(query);
+      }
+    }
+  );
+};

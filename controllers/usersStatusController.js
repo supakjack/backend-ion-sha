@@ -39,7 +39,8 @@ exports.getAtStatus = (req, res, next) => {
   sql.query(
     `SELECT * 
             FROM users_status
-            WHERE uss_id =?`,req.params.id,
+            WHERE uss_id =?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -57,7 +58,8 @@ exports.delAtStatus = (req, res, next) => {
   sql.query(
     `DELETE
             FROM users_status
-            WHERE uss_id =?`,req.params.id,
+            WHERE uss_id =?`,
+    req.params.id,
     (err, query) => {
       if (err) {
         console.log(err);
@@ -65,6 +67,26 @@ exports.delAtStatus = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select del complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.updateStatus = (req, res, next) => {
+  sql.query(
+    `UPDATE users_status 
+      SET uss_name = ? ,
+          uss_use = ?
+      WHERE uss_id = ?`,
+    [req.body.uss_name, req.body.uss_use, req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
         res.json(query);
       }
     }

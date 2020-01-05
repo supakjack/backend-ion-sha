@@ -10,6 +10,9 @@ router.get('/:id', profilesController.getAtProfiles);
 /* DELETE profiles listing. */
 router.delete('/:id', profilesController.delAtProfiles);
 
+/* put profiles listing. */
+router.put('/:id', profilesController.updateProfiles);
+
 /* POST profiles listing. */
 router.post('/', profilesController.addProfiles);
 

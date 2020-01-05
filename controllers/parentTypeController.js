@@ -71,3 +71,23 @@ exports.delAtParentType = (req, res, next) => {
     }
   );
 };
+
+exports.updateParentType = (req, res, next) => {
+  sql.query(
+    `UPDATE parent_type 
+      SET prt_name =?,
+          prt_use =?
+      WHERE prt_id =?`,
+    [req.body.prt_name,req.body.prt_use,req.params.id],
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('update error');
+        res.json(err);
+      } else {
+        console.log('update complete');
+        res.json(query);
+      }
+    }
+  );
+};
