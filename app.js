@@ -27,8 +27,17 @@ const addressRouter = require('./routes/addressRouter');
 const addressTabRouter = require('./routes/addressTabRouter');
 const parentTabRouter = require('./routes/parentTabRouter');
 const sessionRouter = require('./routes/sessionRouter');
+const loginServiceRouter = require('./routes/services/loginServicesRouter');
 
 var app = express();
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'content-type, x-access-token');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 // register the session with it's secret ID
 app.use(session({ secret: 'uitisawesome' }));
@@ -68,5 +77,6 @@ app.use('/adr', addressRouter);
 app.use('/adt', addressTabRouter);
 app.use('/pat', parentTabRouter);
 app.use('/ses', sessionRouter);
+app.use('/login',loginServiceRouter)
 
 module.exports = app;
