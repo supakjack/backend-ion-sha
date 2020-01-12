@@ -73,6 +73,33 @@ exports.delAtEducationLevels = (req, res, next) => {
   );
 };
 
+exports.getEducationLevelsGroup = (req, res, next) => {
+  sql.query(
+    `SELECT DISTINCT
+        edl.edl_id ,
+        edl.edl_name 
+      FROM register AS reg
+      INNER JOIN years AS yrs ON reg.reg_yrs_id = yrs.yrs_id
+      INNER JOIN education_levels AS edl ON reg.reg_edl_id = edl.edl_id
+      INNER JOIN courses AS crs ON reg.reg_crs_id = crs.crs_id
+      INNER JOIN terms AS tem ON reg.reg_tem_id = tem.tem_id
+      INNER JOIN classes AS cls ON reg.reg_cls_id = cls.cls_id
+      INNER JOIN register_status AS rgs ON reg_sta_id = rgs.rgs_id
+      INNER JOIN applications AS app ON reg.reg_id = app.app_reg_id
+      WHERE reg.reg_use = 'y' AND app.app_sta_id = 4`,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select DISTINCT edl.edl_name error');
+        res.json(err);
+      } else {
+        console.log('select DISTINCT edl.edl_name complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
 exports.updateEducationLevels = (req, res, next) => {
   sql.query(
     `UPDATE education_levels 

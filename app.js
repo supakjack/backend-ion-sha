@@ -28,12 +28,15 @@ const addressTabRouter = require('./routes/addressTabRouter');
 const parentTabRouter = require('./routes/parentTabRouter');
 const sessionRouter = require('./routes/sessionRouter');
 const loginServiceRouter = require('./routes/services/loginServicesRouter');
+const newsServiceRouter = require('./routes/services/newsServiceRouter');
+const listServiceRouter = require('./routes/services/listServiceRouter');
+const formServiceRouter = require('./routes/services/formServiceRouter');
 
 var app = express();
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE , PATCH');
   res.setHeader('Access-Control-Allow-Headers', 'content-type, x-access-token');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
@@ -77,6 +80,9 @@ app.use('/adr', addressRouter);
 app.use('/adt', addressTabRouter);
 app.use('/pat', parentTabRouter);
 app.use('/ses', sessionRouter);
-app.use('/login',loginServiceRouter)
+app.use('/login', loginServiceRouter);
+app.use('/news', newsServiceRouter);
+app.use('/list', listServiceRouter);
+app.use('/form', formServiceRouter);
 
 module.exports = app;

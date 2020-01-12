@@ -4,6 +4,7 @@ var router = express.Router();
 const profilesController = require('../controllers/profilesController');
 
 /* GET profiles listing. */
+router.get('/last', profilesController.getLastId);
 router.get('/', profilesController.getAllProfiles);
 router.get('/:id', profilesController.getAtProfiles);
 

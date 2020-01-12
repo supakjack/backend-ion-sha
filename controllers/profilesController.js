@@ -1,6 +1,23 @@
 // profilesController.js
 const sql = require('../db');
 
+exports.getLastId = (req, res, next) => {
+  sql.query(
+    `SELECT MAX(pro.pro_id) AS last_id
+        FROM profiles AS pro`,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('select last_id error');
+        res.json(err);
+      } else {
+        console.log('select last_id complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
 exports.addProfiles = (req, res, next) => {
   sql.query(
     `INSERT INTO profiles ( pro_first_th_name,
