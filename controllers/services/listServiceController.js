@@ -134,7 +134,7 @@ exports.getAppReg = (req, res, next) => {
     INNER JOIN tsp60_hrdb.hr_province AS pv_stt ON pro_stt.pro_province_id = pv_stt.pv_id
     INNER JOIN tsp60_hrdb.hr_religion AS reli_stt ON pro_stt.pro_religion_id = reli_stt.reli_id
     INNER JOIN tsp60_hrdb.hr_blood AS blood_stt ON pro_stt.pro_blood_id = blood_stt.blood_id
-    WHERE usr.usr_name = ?`,
+    WHERE usr.usr_name = ? AND aps.aps_id != 5 ORDER BY id DESC`,
     req.params.username,
     (err, query) => {
       if (err) {

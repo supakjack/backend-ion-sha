@@ -7,6 +7,7 @@ const applicationsController = require('../controllers/applicationsController');
 router.get('/last/:id', applicationsController.getLastId);
 router.get('/', applicationsController.getAllApplications);
 router.get('/:id', applicationsController.getAtApplications);
+router.get('/tab1/:id',applicationsController.getAtApplicationsTab1)
 
 /* delete Classes listing. */
 router.delete('/:id', applicationsController.delAtApplications);
@@ -17,6 +18,7 @@ router.put('/:id', applicationsController.updateApplications);
 /* patch Classes listing. */
 router.patch('/pass/:id', applicationsController.updateAppPass);
 router.patch('/fail/:id', applicationsController.updateAppFail);
+router.patch('/cancel/:id', applicationsController.updateAppCancel);
 
 /* POST Classes listing. */
 router.post('/', applicationsController.addApplications);

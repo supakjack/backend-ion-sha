@@ -229,7 +229,6 @@ exports.getRegDistinct = (req, res, next) => {
   INNER JOIN terms AS tem ON reg.reg_tem_id = tem.tem_id
   INNER JOIN classes AS cls ON reg.reg_cls_id = cls.cls_id
   INNER JOIN register_status AS rgs ON reg_sta_id = rgs.rgs_id
-  INNER JOIN 
   WHERE reg.reg_use = 'y'`,
     (err, query) => {
       if (err) {

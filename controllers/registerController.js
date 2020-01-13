@@ -42,6 +42,24 @@ exports.addRegister = (req, res, next) => {
   );
 };
 
+exports.addCountRegById = (req, res, next) => {
+  sql.query(
+    `UPDATE register AS reg
+        SET reg.reg_now = reg.reg_now + 1
+      WHERE reg_id = ?`,req.body.reg_id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('addCountRegById error');
+        res.json(err);
+      } else {
+        console.log('addCountRegById complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
 exports.getAllRegister = (req, res, next) => {
   sql.query(
     `SELECT * 
@@ -53,6 +71,28 @@ exports.getAllRegister = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select all complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.getBarReport = (req, res, next) => {
+  sql.query(
+    `SELECT 
+		SUM(reg.reg_max) AS max ,
+            SUM(reg.reg_now) AS now ,
+            crs.crs_th_name AS label
+    FROM register AS reg
+    INNER JOIN courses AS crs ON reg.reg_cls_id = crs.crs_id
+    GROUP BY label`,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('getBarReport error');
+        res.json(err);
+      } else {
+        console.log('getBarReport complete');
         res.json(query);
       }
     }
