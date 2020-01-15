@@ -21,6 +21,26 @@ exports.addAddressTab = (req, res, next) => {
   );
 };
 
+exports.getAdtByAppId = (req, res, next) => {
+  sql.query(
+    `SELECT * 
+      FROM address_tab AS adt 
+      INNER JOIN address AS adr ON adr.adr_id = adt.adt_adr_id
+      WHERE adt.adt_app_id = ?`,
+    req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('getAdtByAppId error');
+        res.json(err);
+      } else {
+        console.log('getAdtByAppId complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
 exports.getAllAddressTab = (req, res, next) => {
   sql.query(
     `SELECT * 
@@ -32,6 +52,29 @@ exports.getAllAddressTab = (req, res, next) => {
         res.json(err);
       } else {
         console.log('select all complete');
+        res.json(query);
+      }
+    }
+  );
+};
+
+exports.getAatIdByAppId = (req, res, next) => {
+  sql.query(
+    `SELECT 
+    CASE
+        WHEN COUNT(adt.adt_id) > 0 THEN adt.adt_id
+        ELSE "n"
+    END AS adt_id
+    FROM address_tab AS adt
+    WHERE adt.adt_app_id = ?`,
+    req.params.id,
+    (err, query) => {
+      if (err) {
+        console.log(err);
+        console.log('getAppIdByAdtId error');
+        res.json(err);
+      } else {
+        console.log('getAppIdByAdtId complete');
         res.json(query);
       }
     }

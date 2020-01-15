@@ -6,6 +6,8 @@ const addressTabController = require('../controllers/addressTabController');
 
 /* GET addressTab listing. */
 router.get('/', addressTabController.getAllAddressTab);
+router.get('/tab/:id', addressTabController.getAdtByAppId);
+router.get('/app/:id', addressTabController.getAatIdByAppId);
 router.get('/:id', addressTabController.getAddressTabAt);
 
 /* DELETE addressTab listing. */
